@@ -1,5 +1,7 @@
 import { FiAlignLeft, FiCalendar, FiGithub, FiMessageCircle } from "react-icons/fi";
 
+import {NavLink} from 'react-router-dom'
+
 export function CardPostDetails() {
 
   const postInformation = [
@@ -20,7 +22,10 @@ export function CardPostDetails() {
   return (
     <div className="bg-[#0B1B2B] rounded-2xl py-8 px-10 mt-[-100px]">
     <div className="flex items-center justify-between">
-    <a href="" className="flex items-center gap-2 text-[#3294F8] text-sm "><FiAlignLeft /> Voltar</a>
+      <NavLink to={`/`} className="flex items-center gap-2 text-[#3294F8] text-sm ">
+      <FiAlignLeft /> Voltar
+      </NavLink>
+
       <a href="" className="text-[#3294F8] uppercase text-sm">ver no github</a>
     </div>
       <h3 className="mt-3 font-bold text-[24px] text-[#E7EDF4]">JavaScript data types and data structures</h3>
