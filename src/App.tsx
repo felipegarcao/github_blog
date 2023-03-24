@@ -1,13 +1,12 @@
-import { CardDetails } from './components/CardDetails'
 import { Header } from './components/Header'
+import { Home } from './pages/Home'
+import { Post } from './pages/Post'
 
 function App() {
   return (
     <>
       <Header />
-      <div className='container mx-auto p-3'>
-        <CardDetails />
-      </div>
+      <Post />
     </>
   )
 }

@@ -1,6 +1,22 @@
 import { FiGithub, FiHome, FiUsers } from 'react-icons/fi'
 
 export function CardDetails() {
+
+  const profileInformation = [
+    {
+      icon: <FiGithub size={20} />,
+      title: 'felipegarcao',
+    },
+    {
+      icon: <FiHome size={20} />,
+      title: 'Unimed',
+    },
+    {
+      icon: <FiUsers size={20} />,
+      title: '32 seguidores',
+    },
+  ]
+
   return (
     <div className="bg-[#0B1B2B] rounded-2xl py-8 px-10 mt-[-100px]">
       <div className="flex items-center gap-5 flex-col md:flex-row">
@@ -15,9 +31,11 @@ export function CardDetails() {
             Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu viverra massa quam dignissim aenean malesuada suscipit. Nunc, volutpat pulvinar vel mass.
           </p>
           <div className="flex items-center gap-5 text-[#AFC2D4]">
-            <span className="flex items-center gap-3"><FiGithub size={20} /> felipegarcao</span>
-            <span className="flex items-center gap-3"> <FiHome size={20} /> Unimed</span>
-            <span className="flex items-center gap-3"><FiUsers size={20} /> 32 seguidores</span>
+            {
+              profileInformation.map((item, index) => (
+                <span key={index} className="flex items-center gap-3 text-sm">{item.icon} {item.title}</span>
+              ))
+            }
           </div>
         </div>
       </div>
