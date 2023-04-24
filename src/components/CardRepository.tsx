@@ -1,16 +1,26 @@
-export function CardRepository() {
+import { PostsProps } from "../types/Posts";
+import moment from "moment";
+
+export function CardRepository({ body, created_at, title }: PostsProps) {
   return (
-    <div className="rounded-xl p-8 bg-[#112131] flex flex-col">
+    <div className="rounded-xl p-8 bg-[#112131] flex flex-col cursor-pointer hover:ring-2 hover:ring-[#3A536B] transition-all ease-linear duration-75">
       <header className="flex items-center justify-between">
-        <h3 className="text-lg text-[#E7EDF4] font-bold flex-1">JavaScript data types and data structures</h3>
-        <span className="text-sm text-[#7B96B2]">Há 1 dia</span>
+        <h3 className="text-lg text-[#E7EDF4] font-bold flex-1">{title}</h3>
+        <span className="text-sm text-[#7B96B2]">
+          {moment(created_at).startOf("day").fromNow()}
+        </span>
       </header>
-      <article>
-        <p className="text-justify text-[#AFC2D4]">
-          Programming languages all have built-in data structures, but these often differ from one language to another. This article attempts to list the built-in data 
-          structures available in JavaScript and what properties they have. These can be used to build other data structures. Wherever possible, comparisons wit
-        </p>
+      <article
+        style={{
+          display: "-webkit-box",
+          WebkitLineClamp: 4,
+          overflow: "hidden",
+          WebkitBoxOrient: "vertical",
+          textOverflow: "ellipsis",
+        }}
+      >
+        <p className="text-justify text-[#AFC2D4]">{body}</p>
       </article>
     </div>
-  )
+  );
 }
